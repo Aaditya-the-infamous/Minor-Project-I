@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Quizzly</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner" style="display:flex;align-items:center;justify-content:space-between;gap:20px;width:100%;">
+    <a class="brand" href="index.html" style="display:flex;align-items:baseline;gap:10px;">
+      <div class="mark">Q</div>
+      <div class="name">Quizz<em>ly</em></div>
+    </a>
+    <nav class="tabs" aria-label="Primary">
+      <a href="index.html" data-page="home">Home</a>
+      <a href="categories.html" data-page="categories">Categories</a>
+      <a href="about.html" data-page="about">About</a>
+      <a href="contact.html" data-page="contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="shell">
+  <main class="view">
+    <div class="prose">
+      <h2 style="margin-top:36px;">About Quizzly</h2>
+      <p>Quizzly is a small interactive quiz application built to practice front-end fundamentals — structuring pages, styling a responsive interface, and wiring up logic with plain JavaScript. Pick a category, answer against the clock, and get an instant, itemized breakdown of what you got right.</p>
+      <ul class="feature-list">
+        <li><span class="num">01</span><span><b>Pick a category</b> : General Knowledge, Science, Sports, Technology, or History.</span></li>
+        <li><span class="num">02</span><span><b>Answer against the timer</b> , each question gives you 10 seconds; running out counts as incorrect.</span></li>
+        <li><span class="num">03</span><span><b>See your score instantly</b>, a summary shows your percentage and a question-by-question review.</span></li>
+        <li><span class="num">04</span><span><b>Try again anytime</b>, restart a category or explore a different one.</span></li>
+      </ul>
+      <p>Built with HTML, CSS, and JavaScript — no frameworks, no backend, just the fundamentals. This site is a true multi-page application: each section (Home, Categories, About, Contact, Quiz, Result) is its own HTML file linked together, sharing one stylesheet and one question-bank script.</p>
+      <a class="btn" href="categories.html">Browse categories →</a>
+    </div>
+  </main>
+  <footer>Minor Project — Interactive Quiz Application &middot; built for practicing front-end fundamentals</footer>
+</div>
+
+<script src="data.js"></script>
+<script>markActiveNav('about');</script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quizzly — Test What You Know</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner" style="display:flex;align-items:center;justify-content:space-between;gap:20px;width:100%;">
+    <a class="brand" href="index.html" style="display:flex;align-items:baseline;gap:10px;">
+      <div class="mark">Q</div>
+      <div class="name">Quizz<em>ly</em></div>
+    </a>
+    <nav class="tabs" aria-label="Primary">
+      <a href="index.html" data-page="home">Home</a>
+      <a href="categories.html" data-page="categories">Categories</a>
+      <a href="about.html" data-page="about">About</a>
+      <a href="contact.html" data-page="contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="shell">
+  <main class="view">
+    <section class="hero">
+      <div>
+        <h1>Test what you<br>know, one <span class="accent">card</span><br>at a time.</h1>
+        <p class="lede">Five categories, quick-fire multiple choice questions, and a timer that keeps you honest. Pick a topic and see how you score.</p>
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <a class="btn" href="categories.html">Start a quiz →</a>
+          <a class="btn ghost" href="about.html">How it works</a>
+        </div>
+        <div class="stats-row">
+          <div class="stat"><div class="num" id="statCats"></div><div class="label">Categories</div></div>
+          <div class="stat"><div class="num" id="statQs"></div><div class="label">Questions</div></div>
+          <div class="stat"><div class="num">10s</div><div class="label">Per question</div></div>
+        </div>
+      </div>
+      <div class="deck" aria-hidden="true">
+        <div class="card"><span class="tag">Science</span><div class="q">What is the powerhouse of the cell?</div><div class="dot-row"><span></span><span></span><span></span><span></span></div></div>
+        <div class="card"><span class="tag">History</span><div class="q">Who wrote the Mahabharata?</div><div class="dot-row"><span></span><span></span><span></span><span></span></div></div>
+        <div class="card"><span class="tag">Tech</span><div class="q">What does HTML stand for?</div><div class="dot-row"><span></span><span></span><span></span><span></span></div></div>
+      </div>
+    </section>
+
+    <div class="section-head">
+      <h2>Jump into a category</h2>
+      <span class="count" id="catCount"></span>
+    </div>
+    <div id="catGrid"></div>
+  </main>
+  <footer>Minor Project — Interactive Quiz Application &middot; built for practicing front-end fundamentals</footer>
+</div>
+
+<script src="data.js"></script>
+<script>
+  document.getElementById('statCats').textContent = CATEGORIES.length;
+  document.getElementById('statQs').textContent = Object.values(QUESTIONS).reduce((a,b)=>a+b.length,0);
+  document.getElementById('catCount').textContent = CATEGORIES.length + ' available';
+  document.getElementById('catGrid').innerHTML = catGridMarkup();
+  markActiveNav('home');
+</script>
+</body>
+</html>

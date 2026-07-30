@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz — Quizzly</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner" style="display:flex;align-items:center;justify-content:space-between;gap:20px;width:100%;">
+    <a class="brand" href="index.html" style="display:flex;align-items:baseline;gap:10px;">
+      <div class="mark">Q</div>
+      <div class="name">Quizz<em>ly</em></div>
+    </a>
+    <nav class="tabs" aria-label="Primary">
+      <a href="index.html" data-page="home">Home</a>
+      <a href="categories.html" data-page="categories">Categories</a>
+      <a href="about.html" data-page="about">About</a>
+      <a href="contact.html" data-page="contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="shell">
+  <main class="view" id="app"></main>
+  <footer>Minor Project — Interactive Quiz Application &middot; built for practicing front-end fundamentals</footer>
+</div>
+
+<script src="data.js"></script>
+<script src="quiz.js"></script>
+</body>
+</html>
