@@ -11,8 +11,8 @@
 <body>
 
 <header class="topbar">
-  <div class="topbar-inner" style="display:flex;align-items:center;justify-content:space-between;gap:20px;width:100%;">
-    <a class="brand" href="index.html" style="display:flex;align-items:baseline;gap:10px;">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html">
       <div class="mark">Q</div>
       <div class="name">Quizz<em>ly</em></div>
     </a>
@@ -27,7 +27,7 @@
 
 <div class="shell">
   <main class="view">
-    <div class="prose">
+    <div class="prose prose-center">
       <h2 style="margin-top:36px;">Contact &amp; feedback</h2>
       <p>Spotted a wrong answer, or have an idea for a new category? Send a note below — on this demo build it's stored locally in your browser rather than emailed anywhere.</p>
       <form class="contact-form" id="contactForm">
@@ -46,15 +46,14 @@
         <div>
           <button type="submit" class="btn">Send feedback</button>
         </div>
-        <div class="form-note" id="formNote">Thank you. Your feedback has been noted. This is a front-end demo, so nothing is sent to a server.</div>
+        <div class="form-note" id="formNote">Thanks — your feedback has been noted. This is a front-end demo, so nothing is sent to a server.</div>
       </form>
-      
     </div>
   </main>
   <footer>Minor Project — Interactive Quiz Application &middot; built for practicing front-end fundamentals</footer>
 </div>
 
-<script src="JS/data.js"></script>
+<script src="Js/data.js"></script>
 <script>
   markActiveNav('contact');
   document.getElementById('contactForm').addEventListener('submit', function(e){
