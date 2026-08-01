@@ -6,13 +6,13 @@
 <title>Quizzly — Test What You Know</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="CSS/styles.css">
 </head>
 <body>
 
 <header class="topbar">
-  <div class="topbar-inner" style="display:flex;align-items:center;justify-content:space-between;gap:20px;width:100%;">
-    <a class="brand" href="index.html" style="display:flex;align-items:baseline;gap:10px;">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html">
       <div class="mark">Q</div>
       <div class="name">Quizz<em>ly</em></div>
     </a>
@@ -27,42 +27,50 @@
 
 <div class="shell">
   <main class="view">
-    <section class="hero">
-      <div>
-        <h1>Test what you<br>know, one <span class="accent">card</span><br>at a time.</h1>
-        <p class="lede">Five categories, quick-fire multiple choice questions, and a timer that keeps you honest. Pick a topic and see how you score.</p>
-        <div style="display:flex; gap:12px; flex-wrap:wrap;">
-          <a class="btn" href="categories.html">Start a quiz →</a>
-          <a class="btn ghost" href="about.html">How it works</a>
+    <section class="hero hero-full">
+      <div class="hero-copy">
+        <span class="eyebrow">Interactive Quiz Application</span>
+        <h1>Test what you<br>know, one <span class="accent">question</span><br>at a time.</h1>
+        <p class="lede">Five categories, quick-fire multiple choice questions, and a timer that keeps it competetive. Pick a topic and see how you score, no sign-up, no waiting.</p>
+        <div class="cta-row">
+          <a class="btn btn-lg" href="categories.html">Browse all categories →</a>
+          <a class="btn ghost btn-lg" href="about.html">How it works</a>
         </div>
         <div class="stats-row">
           <div class="stat"><div class="num" id="statCats"></div><div class="label">Categories</div></div>
           <div class="stat"><div class="num" id="statQs"></div><div class="label">Questions</div></div>
-          <div class="stat"><div class="num">10s</div><div class="label">Per question</div></div>
+          <div class="stat"><div class="num">20s</div><div class="label">Per question</div></div>
         </div>
       </div>
-      <div class="deck" aria-hidden="true">
+      <div class="deck deck-lg" aria-hidden="true">
         <div class="card"><span class="tag">Science</span><div class="q">What is the powerhouse of the cell?</div><div class="dot-row"><span></span><span></span><span></span><span></span></div></div>
         <div class="card"><span class="tag">History</span><div class="q">Who wrote the Mahabharata?</div><div class="dot-row"><span></span><span></span><span></span><span></span></div></div>
         <div class="card"><span class="tag">Tech</span><div class="q">What does HTML stand for?</div><div class="dot-row"><span></span><span></span><span></span><span></span></div></div>
       </div>
     </section>
 
-    <div class="section-head">
-      <h2>Jump into a category</h2>
-      <span class="count" id="catCount"></span>
+    <div class="highlights-row">
+      <div class="highlight-item">
+        <span class="hi-icon">⏱</span>
+        <div><strong>Timed questions</strong><span>20 seconds to lock in an answer</span></div>
+      </div>
+      <div class="highlight-item">
+        <span class="hi-icon">✓</span>
+        <div><strong>Instant feedback</strong><span>See what's right the moment you answer</span></div>
+      </div>
+      <div class="highlight-item">
+        <span class="hi-icon">◆</span>
+        <div><strong>Five categories</strong><span>Pick a topic that fits your mood</span></div>
+      </div>
     </div>
-    <div id="catGrid"></div>
   </main>
   <footer>Minor Project — Interactive Quiz Application &middot; built for practicing front-end fundamentals</footer>
 </div>
 
-<script src="data.js"></script>
+<script src="Js/data.js"></script>
 <script>
   document.getElementById('statCats').textContent = CATEGORIES.length;
   document.getElementById('statQs').textContent = Object.values(QUESTIONS).reduce((a,b)=>a+b.length,0);
-  document.getElementById('catCount').textContent = CATEGORIES.length + ' available';
-  document.getElementById('catGrid').innerHTML = catGridMarkup();
   markActiveNav('home');
 </script>
 </body>

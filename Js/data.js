@@ -1,4 +1,4 @@
-/* ============ Shared question bank ============ */
+
 const CATEGORIES = [
   { id:'general', name:'General Knowledge', desc:'Everyday facts, geography, and a little bit of everything.', icon:'globe' },
   { id:'science', name:'Science', desc:'From atoms to astronomy — how the world works.', icon:'flask' },
@@ -15,7 +15,7 @@ const QUESTIONS = {
     {q:"What is the tallest mountain in the world?", o:["K2","Kangchenjunga","Mount Everest","Lhotse"], a:2},
     {q:"Which currency is used in Japan?", o:["Won","Yuan","Yen","Ringgit"], a:2},
     {q:"What is the smallest country in the world by area?", o:["Monaco","San Marino","Vatican City","Liechtenstein"], a:2},
-    {q:"What painted the painting, 'And stay down'?", o:["Vincent Van Gogh","Leonardo Da Vinci","Charles Keegan","Claude Monet"], a:2},
+    {q:"Who painted the painting, 'And stay down'?", o:["Vincent Van Gogh","Leonardo Da Vinci","Charles Keegan","Claude Monet"], a:2},
     {q:"Who is the only president in U.S. history who became one without wanting to?", o:["James A. Garfield","John F. Kennedy","Abraham Lincoln","George W. Bush"], a:0},
     {q:"When did the great Asian Financial crisis begin?", o:["1996","2005","1456","1997"], a:3},
     {q:"Who was the first king of Simraugadh?", o:["Rama Singh Deva","Nanyadeva","Harisingh Dev","Ghiyasuddin Tughlaq"], a:1},
@@ -41,7 +41,7 @@ const QUESTIONS = {
     {q:"Which country hosted the 2022 FIFA World Cup?", o:["Russia","Qatar","Brazil","France"], a:1},
     {q:"Which basketball player has the highest points in NBA history?", o:["Michael Jordan","Kareem-Abdul Jabar","Lebron James","Kevin Durant"], a:2},
     {q:"Unlike most sport, hockey has a consensus greatest of all time, simply known as 'The great one'. Who is he?", o:["Connor McDavid","Sidney Crosby","Auston Matthews","Wayne Gretzky"], a:3},
-    {q:"Who is the black player to famously break the 'color line' of professional baseball in the United States ?", o:["Shohei Ohtani","Jackie Robinson","Babe Ruth","Moses Fleetwood Walker"], a:2},
+    {q:"Who is the black player to famously break the 'color line' of professional baseball in the United States ?", o:["Shohei Ohtani","Jackie Robinson","Babe Ruth","Moses Fleetwood Walker"], a:1},
     {q:"Who is the player with the most direct free kick goals in football history?", o:["Juninho Pernambucano","Lionel Messi","Marcelinho Carioca","Zico"], a:2},
   ],
   tech:[
@@ -78,7 +78,6 @@ const ICONS = {
 
 const TIME_PER_Q = 10;
 
-/* Renders the shared category grid markup into any element */
 function catGridMarkup(){
   return `<div class="cat-grid">
     ${CATEGORIES.map(c=>`
@@ -92,7 +91,6 @@ function catGridMarkup(){
   </div>`;
 }
 
-/* Highlights the current page in the nav bar. Call with the current file name. */
 function markActiveNav(page){
   document.querySelectorAll('nav.tabs a').forEach(a=>{
     a.classList.toggle('active', a.dataset.page === page);

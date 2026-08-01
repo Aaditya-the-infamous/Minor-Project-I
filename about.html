@@ -6,13 +6,13 @@
 <title>About — Quizzly</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="CSS/styles.css">
 </head>
 <body>
 
 <header class="topbar">
-  <div class="topbar-inner" style="display:flex;align-items:center;justify-content:space-between;gap:20px;width:100%;">
-    <a class="brand" href="index.html" style="display:flex;align-items:baseline;gap:10px;">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html">
       <div class="mark">Q</div>
       <div class="name">Quizz<em>ly</em></div>
     </a>
@@ -27,15 +27,36 @@
 
 <div class="shell">
   <main class="view">
-    <div class="prose">
-      <h2 style="margin-top:36px;">About Quizzly</h2>
+    <div class="about-intro">
+      <h2 class="page-title">About Quizzly</h2>
       <p>Quizzly is a small interactive quiz application built to practice front-end fundamentals — structuring pages, styling a responsive interface, and wiring up logic with plain JavaScript. Pick a category, answer against the clock, and get an instant, itemized breakdown of what you got right.</p>
-      <ul class="feature-list">
-        <li><span class="num">01</span><span><b>Pick a category</b> : General Knowledge, Science, Sports, Technology, or History.</span></li>
-        <li><span class="num">02</span><span><b>Answer against the timer</b> , each question gives you 10 seconds; running out counts as incorrect.</span></li>
-        <li><span class="num">03</span><span><b>See your score instantly</b>, a summary shows your percentage and a question-by-question review.</span></li>
-        <li><span class="num">04</span><span><b>Try again anytime</b>, restart a category or explore a different one.</span></li>
-      </ul>
+    </div>
+
+    <span class="eyebrow">How it works</span>
+    <div class="step-grid step-grid-row">
+      <div class="step-card">
+        <div class="num">01</div>
+        <h3>Pick a category</h3>
+        <p>General Knowledge, Science, Sports, Technology, or History — each with its own set of questions.</p>
+      </div>
+      <div class="step-card">
+        <div class="num">02</div>
+        <h3>Answer against the timer</h3>
+        <p>Each question gives you 20 seconds. Running out of time counts as an incorrect answer.</p>
+      </div>
+      <div class="step-card">
+        <div class="num">03</div>
+        <h3>See your score instantly</h3>
+        <p>A summary shows your percentage, a verdict, and a question-by-question review.</p>
+      </div>
+      <div class="step-card">
+        <div class="num">04</div>
+        <h3>Try again anytime</h3>
+        <p>Restart the same category to beat your score, or explore a different one.</p>
+      </div>
+    </div>
+
+    <div class="about-outro">
       <p>Built with HTML, CSS, and JavaScript — no frameworks, no backend, just the fundamentals. This site is a true multi-page application: each section (Home, Categories, About, Contact, Quiz, Result) is its own HTML file linked together, sharing one stylesheet and one question-bank script.</p>
       <a class="btn" href="categories.html">Browse categories →</a>
     </div>
@@ -43,7 +64,7 @@
   <footer>Minor Project — Interactive Quiz Application &middot; built for practicing front-end fundamentals</footer>
 </div>
 
-<script src="data.js"></script>
+<script src="Js/data.js"></script>
 <script>markActiveNav('about');</script>
 </body>
 </html>
